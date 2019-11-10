@@ -39,8 +39,8 @@ namespace OdeToFood.Web.Controllers
             return View();
         }
 
-        [ValidateAntiForgeryToken]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(RestaurantModel newRestaurant)
         {
             if (String.IsNullOrEmpty(newRestaurant.Name))
@@ -55,6 +55,39 @@ namespace OdeToFood.Web.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var model = _resaurantData.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, FormCollection form)
+        {
+            _resaurantData.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var model = _resaurantData.GetById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(RestaurantModel restaurant, FormCollection form)
+        {
+            if(ModelState.IsValid)
+            {
+                _resaurantData.Update(restaurant);
+                return RedirectToAction("Index");
+            }
+            return View(restaurant);
         }
     }
 }

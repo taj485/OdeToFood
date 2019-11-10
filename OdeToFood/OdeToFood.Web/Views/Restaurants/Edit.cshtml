@@ -1,0 +1,27 @@
+﻿@model OdeToFood.Data.Models.RestaurantModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit restaurant here</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken();
+
+<div class="form-group">
+    @Html.Label("Restaurant Name: ", htmlAttributes: new { @class = "control-label col-md" })
+    @Html.EditorFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+</div>
+
+    <div class="form-group">
+        @Html.Label("Menu Type: ", htmlAttributes: new { @class = "control-label col-md" })
+        @Html.EnumDropDownListFor(model => model.Menu)
+        @Html.ValidationMessageFor(model => model.Menu, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <input type="Submit" value="Update" />
+    </div>
+}

@@ -31,6 +31,15 @@ namespace OdeToFood.Data.Services
             });
         }
 
+        public void Delete(int id)
+        {
+            var deleteRestaurant = GetById(id);
+            if (deleteRestaurant != null)
+            {
+                restaurants.Remove(deleteRestaurant);
+            }
+        }
+
         public IEnumerable<RestaurantModel> GetAll()
         {
             return restaurants.OrderBy(x => x.Name);
@@ -39,6 +48,16 @@ namespace OdeToFood.Data.Services
         public RestaurantModel GetById(int id)
         {
             return restaurants.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void Update(RestaurantModel restaurant)
+        {
+            var existing = GetById(restaurant.Id);
+            if(existing != null)
+            {
+                existing.Name = restaurant.Name;
+                existing.Menu = restaurant.Menu;
+            }
         }
     }
     

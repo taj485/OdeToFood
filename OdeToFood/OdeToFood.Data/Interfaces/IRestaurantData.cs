@@ -9,7 +9,9 @@ namespace OdeToFood.Data.Services
     {
         IEnumerable<RestaurantModel> GetAll();
         RestaurantModel GetById(int id);
-        void Create(RestaurantModel restaurantModel);
+        void Create(RestaurantModel restaurant);
+        void Delete(int id);
+        void Update(RestaurantModel restaurant);
     }
 
 }

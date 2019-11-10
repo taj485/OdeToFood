@@ -1,0 +1,18 @@
+﻿@model OdeToFood.Data.Models.RestaurantModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Please confirm</h2>
+
+<p>Are you sure you want to delete @Model.Name</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <input type="Submit" value="Delete" />
+    </div>
+}
+
