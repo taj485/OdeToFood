@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css/")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -28,9 +29,17 @@
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
+
+        <input id="clicker" type="checkbox" />
+        <label for="clicker">Click me! I'm an arbitrary trigger</label>
+
+        <div class="panel-wrap">
+            @Html.Partial("_Slider")
+        </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
