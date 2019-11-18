@@ -17,7 +17,7 @@ namespace OdeToFood.Web.Controllers
             _resaurantData = restaurantData;
         }
 
-        // GET: Restaurants
+        [Authorize]
         public ActionResult Index()
         {
             var model = _resaurantData.GetAll();
