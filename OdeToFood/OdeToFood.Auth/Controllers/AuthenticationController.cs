@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace OdeToFood.Web.Controllers
+namespace OdeToFood.Auth.Controllers
 {
     public class AuthenticationController : Controller
     {
