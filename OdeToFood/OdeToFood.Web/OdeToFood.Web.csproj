@@ -165,6 +165,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Authentication\Login.cshtml" />
     <None Include="Views\Shared\_Slider.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -205,6 +206,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OdeToFood.Auth\OdeToFood.Auth.csproj">
+      <Project>{71a484d9-516d-4cae-b92b-91d3678c2b04}</Project>
+      <Name>OdeToFood.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj">
       <Project>{AC5E8EFA-7A08-4D38-A135-B80C5C39D9B9}</Project>
       <Name>OdeToFood.Data</Name>
