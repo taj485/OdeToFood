@@ -80,12 +80,14 @@ namespace OdeToFood.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(RestaurantModel restaurant, FormCollection form)
         {
             if(ModelState.IsValid)
             {
                 _resaurantData.Update(restaurant);
-                return RedirectToAction("Index");
+                TempData["Message"] = "You have successfully edited the Restaurant";
+                return RedirectToAction("Details", new { id = restaurant.Id});
             }
             return View(restaurant);
         }

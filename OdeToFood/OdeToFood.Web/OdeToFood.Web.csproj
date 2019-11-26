@@ -51,6 +51,12 @@
     <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -165,6 +171,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Views\Shared\_RestaurantSummary.cshtml" />
     <Content Include="Views\Authentication\Login.cshtml" />
     <None Include="Views\Shared\_Slider.cshtml" />
     <Content Include="Web.config" />
@@ -211,7 +218,7 @@
       <Name>OdeToFood.Auth</Name>
     </ProjectReference>
     <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj">
-      <Project>{AC5E8EFA-7A08-4D38-A135-B80C5C39D9B9}</Project>
+      <Project>{ac5e8efa-7a08-4d38-a135-b80c5c39d9b9}</Project>
       <Name>OdeToFood.Data</Name>
     </ProjectReference>
   </ItemGroup>
