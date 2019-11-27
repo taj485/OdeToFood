@@ -3,6 +3,13 @@
     ViewBag.Title = "Index";
 }
 
+@if (TempData["Register"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["Register"]
+    </div>
+}
+
 <h2>Restaurants</h2>
 
 <p>@Html.ActionLink("Add New Restaurant", "Create")</p>
